@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --cafe-bg: rgb(223, 223, 211);
+  --cafe-blue: rgb(18, 101, 255);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.cafe-heading {
+  font-family: var(--font-jetbrains);
+  letter-spacing: -3.55px;
+}
+
+.cafe-nav {
+  font-family: "Martian Mono", monospace;
+  letter-spacing: -1.6px;
+}
+
+.cafe-hero {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+}
+
+.cafe-menu-btn {
+  font-family: var(--font-crimson);
+}
+
+.cafe-product-title {
+  font-family: "Smooch", cursive;
+}
+
+.cafe-price {
+  font-family: "Scada", sans-serif;
+}
