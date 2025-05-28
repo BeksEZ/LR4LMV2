@@ -28,7 +28,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-      <article className="px-2.5 pt-9 pb-2 mx-auto w-full text-2xl leading-10 text-black rounded-3xl border-2 border-black bg-stone-300">
+      <article className="px-2.5 pt-5 pb-2 mx-auto w-full text-2xl leading-10 text-black rounded-3xl border-2 border-black bg-stone-300">
         <div className="relative w-full h-48">
           <Image
               src={imageSrc}

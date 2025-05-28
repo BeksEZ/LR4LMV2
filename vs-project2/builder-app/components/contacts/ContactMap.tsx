@@ -2,12 +2,10 @@ import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 import { useEffect } from 'react';
 
 export function ContactMap() {
-  // Retrieve the key from the environment and log it to confirm it's being loaded.
   const apiKey = process.env.REACT_APP_Maps_API_KEY;
   useEffect(() => {
-    // It's good practice to check if the key is actually present
     if (apiKey) {
-      console.log('Loaded API key:', apiKey.substring(0, 10) + '...'); // Log a portion for security
+      console.log('Loaded API key:', apiKey.substring(0, 10) + '...');
     } else {
       console.warn('Google Maps API key is not set or not accessible via process.env.REACT_APP_Maps_API_KEY. Using fallback.');
     }
@@ -15,9 +13,7 @@ export function ContactMap() {
 
   const { isLoaded, loadError } = useJsApiLoader({
     id: 'google-map-script',
-    // Provide a fallback key only if truly necessary for development and clearly mark it.
-    // It's better to ensure the environment variable is correctly set.
-    googleMapsApiKey: apiKey || 'AIzaSyA0TyBwPM1C5FRs-KDWwZLrLVb6sSKG4kg', // Replace with your actual fallback or remove if not needed
+    googleMapsApiKey: apiKey || 'AIzaSyA0TyBwPM1C5FRs-KDWwZLrLVb6sSKG4kg',
   });
 
   if (loadError) {
@@ -25,17 +21,13 @@ export function ContactMap() {
     return <div className="p-4 text-red-500 bg-red-100 rounded-lg">Error loading maps: {loadError.message}</div>;
   }
 
-  // Coordinates for проспект Шевченка, 1, Одеса
+  // проспект Шевченка, 1, Одеса
   const center = {
     lat: 46.46073227263883,
     lng: 30.750795899802718,
   };
 
   return (
-      // The `h-full` class allows the map to fill the height of its parent container.
-      // The parent div in `Contacts.tsx` (md:w-[54%]) will be stretched to match the height of the ContactInfo box,
-      // and this `h-full` ensures the map itself also expands to that height.
-      // On mobile, where the layout is stacked, this will adapt based on the container's height.
       <div className="w-full h-full rounded-[60px] overflow-hidden">
         {!isLoaded ? (
             <div className="flex items-center justify-center h-full bg-gray-200 rounded-[60px]">
@@ -44,8 +36,8 @@ export function ContactMap() {
         ) : (
             <GoogleMap
                 mapContainerStyle={{
-                  width: '100%', // This ensures the map fills the div container
-                  height: '100%', // This ensures the map fills the div container
+                  width: '100%',
+                  height: '100%',
                 }}
                 center={center}
                 zoom={15}
@@ -55,11 +47,11 @@ export function ContactMap() {
                   fullscreenControl: false,
                   styles: [
                     {
-                      featureType: 'poi', // Points of Interest
+                      featureType: 'poi',
                       elementType: 'labels',
-                      stylers: [{ visibility: 'off' }], // Hide POI labels
+                      stylers: [{ visibility: 'off' }],
                     },
-                    // You can add more custom styles here if needed
+
                   ],
                 }}
             >

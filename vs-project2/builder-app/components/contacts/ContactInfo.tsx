@@ -1,5 +1,3 @@
-
-
 export function ContactInfo() {
   return (
     <section className="flex flex-col grow items-start px-8 pt-16 pb-24 w-full text-2xl font-extrabold text-white bg-blue-600 rounded-[60px] max-md:px-5 max-md:pb-24 max-md:mt-10 max-md:max-w-full">

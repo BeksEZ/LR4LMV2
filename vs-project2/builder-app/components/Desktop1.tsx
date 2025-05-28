@@ -4,8 +4,8 @@ import Layout from "@/components/Layout";
 import { Hero } from "@/components/Hero";
 import { MenuButton } from "@/components/MenuButton";
 import { ProductGrid } from "@/components/ProductGrid";
-import { InstagramPromo } from "@/components/InstagramPromo"; // Import the new component
-import { Footer } from "@/components/Footer"; // Import the new component
+import { InstagramPromo } from "@/components/InstagramPromo";
+import { Footer } from "@/components/Footer";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -27,8 +27,8 @@ const Desktop1 = () => {
                     </div>
                 </div>
             </section>
-            <InstagramPromo /> {/* Add the Instagram promo section here */}
-            <Footer /> {/* Add the footer at the end of the page */}
+            <InstagramPromo />
+            <Footer />
         </Layout>
     );
 };
